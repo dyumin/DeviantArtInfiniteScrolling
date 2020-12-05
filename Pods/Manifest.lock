@@ -6,12 +6,16 @@ PODS:
   - RxRelay (5.1.1):
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
+  - SwiftMessages (8.0.3):
+    - SwiftMessages/App (= 8.0.3)
+  - SwiftMessages/App (8.0.3)
   - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - RxCocoa
   - RxSwift
+  - SwiftMessages
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
@@ -20,6 +24,7 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SwiftMessages
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -27,8 +32,9 @@ SPEC CHECKSUMS:
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  SwiftMessages: 063ec9ffea3ffa7d17ba595157a9ec78e4fe045f
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: f682a055e0679aef8bac779c34cf26b7dae7c042
+PODFILE CHECKSUM: 1cfdb9e4fa7edd93d9bf637cf5f6cd4823f4200f
 
 COCOAPODS: 1.8.4

@@ -9,6 +9,7 @@ target 'DeviantArtInfiniteScrolling' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SwiftMessages'
 
   # Pods for DeviantArtInfiniteScrolling
 
