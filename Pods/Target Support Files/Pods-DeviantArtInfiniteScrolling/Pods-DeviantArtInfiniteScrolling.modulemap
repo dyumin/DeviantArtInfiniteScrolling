@@ -1,0 +1,6 @@
+framework module Pods_DeviantArtInfiniteScrolling {
+  umbrella header "Pods-DeviantArtInfiniteScrolling-umbrella.h"
+
+  export *
+  module * { export * }
+}

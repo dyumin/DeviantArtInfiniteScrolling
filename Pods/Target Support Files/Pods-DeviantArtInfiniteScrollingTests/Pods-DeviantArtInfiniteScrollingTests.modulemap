@@ -1,0 +1,6 @@
+framework module Pods_DeviantArtInfiniteScrollingTests {
+  umbrella header "Pods-DeviantArtInfiniteScrollingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
