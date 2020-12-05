@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CCF46294257BB22600BEB655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46293257BB22600BEB655 /* AppDelegate.swift */; };
+		CCF46296257BB22600BEB655 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46295257BB22600BEB655 /* SceneDelegate.swift */; };
+		CCF46298257BB22600BEB655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46297257BB22600BEB655 /* ViewController.swift */; };
+		CCF4629B257BB22600BEB655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF46299257BB22600BEB655 /* Main.storyboard */; };
+		CCF4629D257BB22800BEB655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCF4629C257BB22800BEB655 /* Assets.xcassets */; };
+		CCF462A0257BB22800BEB655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF4629E257BB22800BEB655 /* LaunchScreen.storyboard */; };
+		CCF462AB257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF462AA257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.swift */; };
+		CCF462B6257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF462B5257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CCF462A7257BB22800BEB655 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCF46288257BB22600BEB655 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCF4628F257BB22600BEB655;
+			remoteInfo = DeviantArtInfiniteScrolling;
+		};
+		CCF462B2257BB22800BEB655 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCF46288257BB22600BEB655 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCF4628F257BB22600BEB655;
+			remoteInfo = DeviantArtInfiniteScrolling;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CCF46290257BB22600BEB655 /* DeviantArtInfiniteScrolling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviantArtInfiniteScrolling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF46293257BB22600BEB655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CCF46295257BB22600BEB655 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CCF46297257BB22600BEB655 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CCF4629A257BB22600BEB655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCF4629C257BB22800BEB655 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCF4629F257BB22800BEB655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CCF462A1257BB22800BEB655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCF462A6257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviantArtInfiniteScrollingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF462AA257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantArtInfiniteScrollingTests.swift; sourceTree = "<group>"; };
+		CCF462AC257BB22800BEB655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCF462B1257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviantArtInfiniteScrollingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCF462B5257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantArtInfiniteScrollingUITests.swift; sourceTree = "<group>"; };
+		CCF462B7257BB22800BEB655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCF4628D257BB22600BEB655 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCF462A3257BB22800BEB655 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCF462AE257BB22800BEB655 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CCF46287257BB22600BEB655 = {
+			isa = PBXGroup;
+			children = (
+				CCF46292257BB22600BEB655 /* DeviantArtInfiniteScrolling */,
+				CCF462A9257BB22800BEB655 /* DeviantArtInfiniteScrollingTests */,
+				CCF462B4257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests */,
+				CCF46291257BB22600BEB655 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CCF46291257BB22600BEB655 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46290257BB22600BEB655 /* DeviantArtInfiniteScrolling.app */,
+				CCF462A6257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.xctest */,
+				CCF462B1257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCF46292257BB22600BEB655 /* DeviantArtInfiniteScrolling */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46293257BB22600BEB655 /* AppDelegate.swift */,
+				CCF46295257BB22600BEB655 /* SceneDelegate.swift */,
+				CCF46297257BB22600BEB655 /* ViewController.swift */,
+				CCF46299257BB22600BEB655 /* Main.storyboard */,
+				CCF4629C257BB22800BEB655 /* Assets.xcassets */,
+				CCF4629E257BB22800BEB655 /* LaunchScreen.storyboard */,
+				CCF462A1257BB22800BEB655 /* Info.plist */,
+			);
+			path = DeviantArtInfiniteScrolling;
+			sourceTree = "<group>";
+		};
+		CCF462A9257BB22800BEB655 /* DeviantArtInfiniteScrollingTests */ = {
+			isa = PBXGroup;
+			children = (
+				CCF462AA257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.swift */,
+				CCF462AC257BB22800BEB655 /* Info.plist */,
+			);
+			path = DeviantArtInfiniteScrollingTests;
+			sourceTree = "<group>";
+		};
+		CCF462B4257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CCF462B5257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.swift */,
+				CCF462B7257BB22800BEB655 /* Info.plist */,
+			);
+			path = DeviantArtInfiniteScrollingUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCF4628F257BB22600BEB655 /* DeviantArtInfiniteScrolling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCF462BA257BB22800BEB655 /* Build configuration list for PBXNativeTarget "DeviantArtInfiniteScrolling" */;
+			buildPhases = (
+				CCF4628C257BB22600BEB655 /* Sources */,
+				CCF4628D257BB22600BEB655 /* Frameworks */,
+				CCF4628E257BB22600BEB655 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeviantArtInfiniteScrolling;
+			productName = DeviantArtInfiniteScrolling;
+			productReference = CCF46290257BB22600BEB655 /* DeviantArtInfiniteScrolling.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CCF462A5257BB22800BEB655 /* DeviantArtInfiniteScrollingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCF462BD257BB22800BEB655 /* Build configuration list for PBXNativeTarget "DeviantArtInfiniteScrollingTests" */;
+			buildPhases = (
+				CCF462A2257BB22800BEB655 /* Sources */,
+				CCF462A3257BB22800BEB655 /* Frameworks */,
+				CCF462A4257BB22800BEB655 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCF462A8257BB22800BEB655 /* PBXTargetDependency */,
+			);
+			name = DeviantArtInfiniteScrollingTests;
+			productName = DeviantArtInfiniteScrollingTests;
+			productReference = CCF462A6257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CCF462B0257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCF462C0257BB22800BEB655 /* Build configuration list for PBXNativeTarget "DeviantArtInfiniteScrollingUITests" */;
+			buildPhases = (
+				CCF462AD257BB22800BEB655 /* Sources */,
+				CCF462AE257BB22800BEB655 /* Frameworks */,
+				CCF462AF257BB22800BEB655 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCF462B3257BB22800BEB655 /* PBXTargetDependency */,
+			);
+			name = DeviantArtInfiniteScrollingUITests;
+			productName = DeviantArtInfiniteScrollingUITests;
+			productReference = CCF462B1257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CCF46288257BB22600BEB655 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					CCF4628F257BB22600BEB655 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					CCF462A5257BB22800BEB655 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = CCF4628F257BB22600BEB655;
+					};
+					CCF462B0257BB22800BEB655 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = CCF4628F257BB22600BEB655;
+					};
+				};
+			};
+			buildConfigurationList = CCF4628B257BB22600BEB655 /* Build configuration list for PBXProject "DeviantArtInfiniteScrolling" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CCF46287257BB22600BEB655;
+			productRefGroup = CCF46291257BB22600BEB655 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CCF4628F257BB22600BEB655 /* DeviantArtInfiniteScrolling */,
+				CCF462A5257BB22800BEB655 /* DeviantArtInfiniteScrollingTests */,
+				CCF462B0257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCF4628E257BB22600BEB655 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCF462A0257BB22800BEB655 /* LaunchScreen.storyboard in Resources */,
+				CCF4629D257BB22800BEB655 /* Assets.xcassets in Resources */,
+				CCF4629B257BB22600BEB655 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCF462A4257BB22800BEB655 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCF462AF257BB22800BEB655 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCF4628C257BB22600BEB655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCF46298257BB22600BEB655 /* ViewController.swift in Sources */,
+				CCF46294257BB22600BEB655 /* AppDelegate.swift in Sources */,
+				CCF46296257BB22600BEB655 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCF462A2257BB22800BEB655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCF462AB257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCF462AD257BB22800BEB655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCF462B6257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CCF462A8257BB22800BEB655 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCF4628F257BB22600BEB655 /* DeviantArtInfiniteScrolling */;
+			targetProxy = CCF462A7257BB22800BEB655 /* PBXContainerItemProxy */;
+		};
+		CCF462B3257BB22800BEB655 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCF4628F257BB22600BEB655 /* DeviantArtInfiniteScrolling */;
+			targetProxy = CCF462B2257BB22800BEB655 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CCF46299257BB22600BEB655 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCF4629A257BB22600BEB655 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CCF4629E257BB22800BEB655 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCF4629F257BB22800BEB655 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CCF462B8257BB22800BEB655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CCF462B9257BB22800BEB655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CCF462BB257BB22800BEB655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UCTQDPM624;
+				INFOPLIST_FILE = DeviantArtInfiniteScrolling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.dyumin.DeviantArtInfiniteScrolling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CCF462BC257BB22800BEB655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UCTQDPM624;
+				INFOPLIST_FILE = DeviantArtInfiniteScrolling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.dyumin.DeviantArtInfiniteScrolling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CCF462BE257BB22800BEB655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UCTQDPM624;
+				INFOPLIST_FILE = DeviantArtInfiniteScrollingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.dyumin.DeviantArtInfiniteScrollingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeviantArtInfiniteScrolling.app/DeviantArtInfiniteScrolling";
+			};
+			name = Debug;
+		};
+		CCF462BF257BB22800BEB655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UCTQDPM624;
+				INFOPLIST_FILE = DeviantArtInfiniteScrollingTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.dyumin.DeviantArtInfiniteScrollingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeviantArtInfiniteScrolling.app/DeviantArtInfiniteScrolling";
+			};
+			name = Release;
+		};
+		CCF462C1257BB22800BEB655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UCTQDPM624;
+				INFOPLIST_FILE = DeviantArtInfiniteScrollingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.dyumin.DeviantArtInfiniteScrollingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DeviantArtInfiniteScrolling;
+			};
+			name = Debug;
+		};
+		CCF462C2257BB22800BEB655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UCTQDPM624;
+				INFOPLIST_FILE = DeviantArtInfiniteScrollingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.dyumin.DeviantArtInfiniteScrollingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DeviantArtInfiniteScrolling;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CCF4628B257BB22600BEB655 /* Build configuration list for PBXProject "DeviantArtInfiniteScrolling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCF462B8257BB22800BEB655 /* Debug */,
+				CCF462B9257BB22800BEB655 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCF462BA257BB22800BEB655 /* Build configuration list for PBXNativeTarget "DeviantArtInfiniteScrolling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCF462BB257BB22800BEB655 /* Debug */,
+				CCF462BC257BB22800BEB655 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCF462BD257BB22800BEB655 /* Build configuration list for PBXNativeTarget "DeviantArtInfiniteScrollingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCF462BE257BB22800BEB655 /* Debug */,
+				CCF462BF257BB22800BEB655 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCF462C0257BB22800BEB655 /* Build configuration list for PBXNativeTarget "DeviantArtInfiniteScrollingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCF462C1257BB22800BEB655 /* Debug */,
+				CCF462C2257BB22800BEB655 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CCF46288257BB22600BEB655 /* Project object */;
+}
