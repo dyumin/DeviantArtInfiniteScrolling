@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02EBF3291AA3798A4E198C88 /* Pods_DeviantArtInfiniteScrollingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13FB322DE64615CDDD65B80E /* Pods_DeviantArtInfiniteScrollingTests.framework */; };
+		0660044610A6B2EF275F7C88 /* Pods_DeviantArtInfiniteScrolling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9665F74F8F83F223A3DFF7EF /* Pods_DeviantArtInfiniteScrolling.framework */; };
+		7B077C8DA5F9B069CD12B5A1 /* Pods_DeviantArtInfiniteScrolling_DeviantArtInfiniteScrollingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C68C890E7650061838D1543 /* Pods_DeviantArtInfiniteScrolling_DeviantArtInfiniteScrollingUITests.framework */; };
+		CC5819DA257D1F2700BE1530 /* UniqueLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5819D9257D1F2600BE1530 /* UniqueLock.swift */; };
+		CC5819DF257D396300BE1530 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5819DE257D396300BE1530 /* TableViewDataSource.swift */; };
+		CC636335257BE768001A2522 /* StatusMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC636334257BE768001A2522 /* StatusMessage.swift */; };
 		CCF46294257BB22600BEB655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46293257BB22600BEB655 /* AppDelegate.swift */; };
 		CCF46298257BB22600BEB655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46297257BB22600BEB655 /* ViewController.swift */; };
 		CCF4629B257BB22600BEB655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF46299257BB22600BEB655 /* Main.storyboard */; };
@@ -14,6 +20,10 @@
 		CCF462A0257BB22800BEB655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCF4629E257BB22800BEB655 /* LaunchScreen.storyboard */; };
 		CCF462AB257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF462AA257BB22800BEB655 /* DeviantArtInfiniteScrollingTests.swift */; };
 		CCF462B6257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF462B5257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.swift */; };
+		CCF462D6257BC90E00BEB655 /* DeviationPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF462D4257BC90E00BEB655 /* DeviationPreviewCell.swift */; };
+		CCF462D7257BC90E00BEB655 /* DeviationPreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF462D5257BC90E00BEB655 /* DeviationPreviewCell.xib */; };
+		CCF4630E257BCD2900BEB655 /* DAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF4630D257BCD2900BEB655 /* DAManager.swift */; };
+		CCF46327257BD8B200BEB655 /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46326257BD8B200BEB655 /* AlamofireManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13FB322DE64615CDDD65B80E /* Pods_DeviantArtInfiniteScrollingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeviantArtInfiniteScrollingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C68C890E7650061838D1543 /* Pods_DeviantArtInfiniteScrolling_DeviantArtInfiniteScrollingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeviantArtInfiniteScrolling_DeviantArtInfiniteScrollingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D8F6384B332E562D3A6EAD5 /* Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.debug.xcconfig"; path = "Target Support Files/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5204CE33409B617F5CAA21C5 /* Pods-DeviantArtInfiniteScrollingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantArtInfiniteScrollingTests.release.xcconfig"; path = "Target Support Files/Pods-DeviantArtInfiniteScrollingTests/Pods-DeviantArtInfiniteScrollingTests.release.xcconfig"; sourceTree = "<group>"; };
+		55E44EAE8FC74F8AD55D26A2 /* Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.release.xcconfig"; path = "Target Support Files/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8F5D882C2300841F7D00AFD0 /* Pods-DeviantArtInfiniteScrollingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantArtInfiniteScrollingTests.debug.xcconfig"; path = "Target Support Files/Pods-DeviantArtInfiniteScrollingTests/Pods-DeviantArtInfiniteScrollingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9665F74F8F83F223A3DFF7EF /* Pods_DeviantArtInfiniteScrolling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeviantArtInfiniteScrolling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4B829B6249564FFF4413D0F /* Pods-DeviantArtInfiniteScrolling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantArtInfiniteScrolling.release.xcconfig"; path = "Target Support Files/Pods-DeviantArtInfiniteScrolling/Pods-DeviantArtInfiniteScrolling.release.xcconfig"; sourceTree = "<group>"; };
+		CC5819D9257D1F2600BE1530 /* UniqueLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueLock.swift; sourceTree = "<group>"; };
+		CC5819DE257D396300BE1530 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		CC636334257BE768001A2522 /* StatusMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessage.swift; sourceTree = "<group>"; };
 		CCF46290257BB22600BEB655 /* DeviantArtInfiniteScrolling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviantArtInfiniteScrolling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF46293257BB22600BEB655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCF46297257BB22600BEB655 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +68,11 @@
 		CCF462B1257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeviantArtInfiniteScrollingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF462B5257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviantArtInfiniteScrollingUITests.swift; sourceTree = "<group>"; };
 		CCF462B7257BB22800BEB655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCF462D4257BC90E00BEB655 /* DeviationPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviationPreviewCell.swift; sourceTree = "<group>"; };
+		CCF462D5257BC90E00BEB655 /* DeviationPreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviationPreviewCell.xib; sourceTree = "<group>"; };
+		CCF4630D257BCD2900BEB655 /* DAManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAManager.swift; sourceTree = "<group>"; };
+		CCF46326257BD8B200BEB655 /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
+		EA9E63CA04FA681E396DDB89 /* Pods-DeviantArtInfiniteScrolling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantArtInfiniteScrolling.debug.xcconfig"; path = "Target Support Files/Pods-DeviantArtInfiniteScrolling/Pods-DeviantArtInfiniteScrolling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0660044610A6B2EF275F7C88 /* Pods_DeviantArtInfiniteScrolling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02EBF3291AA3798A4E198C88 /* Pods_DeviantArtInfiniteScrollingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +96,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B077C8DA5F9B069CD12B5A1 /* Pods_DeviantArtInfiniteScrolling_DeviantArtInfiniteScrollingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52922013A2834402B8D007B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA9E63CA04FA681E396DDB89 /* Pods-DeviantArtInfiniteScrolling.debug.xcconfig */,
+				C4B829B6249564FFF4413D0F /* Pods-DeviantArtInfiniteScrolling.release.xcconfig */,
+				4D8F6384B332E562D3A6EAD5 /* Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.debug.xcconfig */,
+				55E44EAE8FC74F8AD55D26A2 /* Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.release.xcconfig */,
+				8F5D882C2300841F7D00AFD0 /* Pods-DeviantArtInfiniteScrollingTests.debug.xcconfig */,
+				5204CE33409B617F5CAA21C5 /* Pods-DeviantArtInfiniteScrollingTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B7F63FDC1175CBD9DC0DD387 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9665F74F8F83F223A3DFF7EF /* Pods_DeviantArtInfiniteScrolling.framework */,
+				1C68C890E7650061838D1543 /* Pods_DeviantArtInfiniteScrolling_DeviantArtInfiniteScrollingUITests.framework */,
+				13FB322DE64615CDDD65B80E /* Pods_DeviantArtInfiniteScrollingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CCF46287257BB22600BEB655 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +133,8 @@
 				CCF462A9257BB22800BEB655 /* DeviantArtInfiniteScrollingTests */,
 				CCF462B4257BB22800BEB655 /* DeviantArtInfiniteScrollingUITests */,
 				CCF46291257BB22600BEB655 /* Products */,
+				52922013A2834402B8D007B6 /* Pods */,
+				B7F63FDC1175CBD9DC0DD387 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +151,17 @@
 		CCF46292257BB22600BEB655 /* DeviantArtInfiniteScrolling */ = {
 			isa = PBXGroup;
 			children = (
+				CCF46325257BD89000BEB655 /* Helpers */,
+				CCF462CF257BBAF100BEB655 /* DeviantArt API */,
 				CCF46293257BB22600BEB655 /* AppDelegate.swift */,
 				CCF46297257BB22600BEB655 /* ViewController.swift */,
 				CCF46299257BB22600BEB655 /* Main.storyboard */,
 				CCF4629C257BB22800BEB655 /* Assets.xcassets */,
 				CCF4629E257BB22800BEB655 /* LaunchScreen.storyboard */,
 				CCF462A1257BB22800BEB655 /* Info.plist */,
+				CCF462D4257BC90E00BEB655 /* DeviationPreviewCell.swift */,
+				CCF462D5257BC90E00BEB655 /* DeviationPreviewCell.xib */,
+				CC5819DE257D396300BE1530 /* TableViewDataSource.swift */,
 			);
 			path = DeviantArtInfiniteScrolling;
 			sourceTree = "<group>";
@@ -125,6 +184,24 @@
 			path = DeviantArtInfiniteScrollingUITests;
 			sourceTree = "<group>";
 		};
+		CCF462CF257BBAF100BEB655 /* DeviantArt API */ = {
+			isa = PBXGroup;
+			children = (
+				CCF4630D257BCD2900BEB655 /* DAManager.swift */,
+			);
+			path = "DeviantArt API";
+			sourceTree = "<group>";
+		};
+		CCF46325257BD89000BEB655 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CCF46326257BD8B200BEB655 /* AlamofireManager.swift */,
+				CC636334257BE768001A2522 /* StatusMessage.swift */,
+				CC5819D9257D1F2600BE1530 /* UniqueLock.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +209,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCF462BA257BB22800BEB655 /* Build configuration list for PBXNativeTarget "DeviantArtInfiniteScrolling" */;
 			buildPhases = (
+				5AAA0DB97BA47D82560ED5F1 /* [CP] Check Pods Manifest.lock */,
 				CCF4628C257BB22600BEB655 /* Sources */,
 				CCF4628D257BB22600BEB655 /* Frameworks */,
 				CCF4628E257BB22600BEB655 /* Resources */,
+				E847C2D1A70CA0B7050CBC1D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +228,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCF462BD257BB22800BEB655 /* Build configuration list for PBXNativeTarget "DeviantArtInfiniteScrollingTests" */;
 			buildPhases = (
+				CB2DC307456404642ADAA997 /* [CP] Check Pods Manifest.lock */,
 				CCF462A2257BB22800BEB655 /* Sources */,
 				CCF462A3257BB22800BEB655 /* Frameworks */,
 				CCF462A4257BB22800BEB655 /* Resources */,
@@ -167,9 +247,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCF462C0257BB22800BEB655 /* Build configuration list for PBXNativeTarget "DeviantArtInfiniteScrollingUITests" */;
 			buildPhases = (
+				E9D60656B899489CB606EBCF /* [CP] Check Pods Manifest.lock */,
 				CCF462AD257BB22800BEB655 /* Sources */,
 				CCF462AE257BB22800BEB655 /* Frameworks */,
 				CCF462AF257BB22800BEB655 /* Resources */,
+				1F2E884E847D81B9C6D0ADF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,6 +312,7 @@
 			files = (
 				CCF462A0257BB22800BEB655 /* LaunchScreen.storyboard in Resources */,
 				CCF4629D257BB22800BEB655 /* Assets.xcassets in Resources */,
+				CCF462D7257BC90E00BEB655 /* DeviationPreviewCell.xib in Resources */,
 				CCF4629B257BB22600BEB655 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,13 +333,122 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F2E884E847D81B9C6D0ADF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AAA0DB97BA47D82560ED5F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeviantArtInfiniteScrolling-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB2DC307456404642ADAA997 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeviantArtInfiniteScrollingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E847C2D1A70CA0B7050CBC1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeviantArtInfiniteScrolling/Pods-DeviantArtInfiniteScrolling-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DeviantArtInfiniteScrolling/Pods-DeviantArtInfiniteScrolling-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeviantArtInfiniteScrolling/Pods-DeviantArtInfiniteScrolling-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9D60656B899489CB606EBCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CCF4628C257BB22600BEB655 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CCF46298257BB22600BEB655 /* ViewController.swift in Sources */,
+				CCF462D6257BC90E00BEB655 /* DeviationPreviewCell.swift in Sources */,
+				CC5819DF257D396300BE1530 /* TableViewDataSource.swift in Sources */,
+				CCF4630E257BCD2900BEB655 /* DAManager.swift in Sources */,
+				CCF46327257BD8B200BEB655 /* AlamofireManager.swift in Sources */,
+				CC5819DA257D1F2700BE1530 /* UniqueLock.swift in Sources */,
 				CCF46294257BB22600BEB655 /* AppDelegate.swift in Sources */,
+				CC636335257BE768001A2522 /* StatusMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +621,7 @@
 		};
 		CCF462BB257BB22800BEB655 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA9E63CA04FA681E396DDB89 /* Pods-DeviantArtInfiniteScrolling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -448,6 +641,7 @@
 		};
 		CCF462BC257BB22800BEB655 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4B829B6249564FFF4413D0F /* Pods-DeviantArtInfiniteScrolling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -467,6 +661,7 @@
 		};
 		CCF462BE257BB22800BEB655 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F5D882C2300841F7D00AFD0 /* Pods-DeviantArtInfiniteScrollingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +684,7 @@
 		};
 		CCF462BF257BB22800BEB655 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5204CE33409B617F5CAA21C5 /* Pods-DeviantArtInfiniteScrollingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +707,7 @@
 		};
 		CCF462C1257BB22800BEB655 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8F6384B332E562D3A6EAD5 /* Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -531,6 +728,7 @@
 		};
 		CCF462C2257BB22800BEB655 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55E44EAE8FC74F8AD55D26A2 /* Pods-DeviantArtInfiniteScrolling-DeviantArtInfiniteScrollingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
