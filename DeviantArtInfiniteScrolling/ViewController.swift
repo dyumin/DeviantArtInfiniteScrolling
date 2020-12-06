@@ -60,6 +60,25 @@ class ViewController: UIViewController, UITableViewDelegate
                 self.datasource.requestDeviations(into: self.tableView)
             }
         }.disposed(by: disposeBag)
+        
+        self.datasource.fetchingInProgress.observeOn(MainScheduler.instance).subscribe
+        { [weak self] (fetchingInProgress) in
+            if let inProgress = fetchingInProgress.element, let self = self
+            {
+                if (inProgress)
+                {
+                    self.pagingDoneLabel.isHidden = true
+                    self.pagingActivityIndicator.isHidden = false
+                    self.pagingActivityIndicator.startAnimating()
+                }
+                else
+                {
+                    self.pagingDoneLabel.isHidden = false
+                    self.pagingActivityIndicator.isHidden = true
+                    self.pagingActivityIndicator.stopAnimating()
+                }
+            }
+        }.disposed(by: disposeBag)
     }
 }
 

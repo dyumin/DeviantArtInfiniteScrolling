@@ -9,6 +9,8 @@ import SwiftMessages
 
 func showStatus(_ messageText: String, _ theme: Theme)
 {
+#if DEBUG
+    
     DispatchQueue.main.async
     {
         let view = MessageView.viewFromNib(layout: .statusLine)
@@ -31,4 +33,6 @@ func showStatus(_ messageText: String, _ theme: Theme)
         // Show the message.
         SwiftMessages.show(view: view)
     }
+    
+#endif
 }

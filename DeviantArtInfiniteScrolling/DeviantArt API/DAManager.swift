@@ -245,10 +245,10 @@ class DAManager
     /// - Returns:       todo
     func requestPopularDeviations(completion: @escaping (AFDataResponse<DeviatonsQueryResult>) -> Void, _ offset: UInt16 = 0, _ timerange: Timerange = ._alltime, _ limit: UInt8 = 120)
     {
-//        if (offset > 50000 || 1 > limit || limit > 120 || access_token.isEmpty)
-//        {
-//            preconditionFailure("offset: \(offset), limit: \(limit), access_token: \(access_token)");
-//        }
+        if (offset > 50000 || 1 > limit || limit > 120 || access_token.isEmpty)
+        {
+            preconditionFailure("offset: \(offset), limit: \(limit), access_token: \(access_token)");
+        }
         
         var urlComponents = URLComponents(string: Endpoints.popular)!
         urlComponents.queryItems =
@@ -257,6 +257,7 @@ class DAManager
                 ,URLQueryItem(name: qioffset, value: String(offset))
                 ,URLQueryItem(name: qitimerange, value: timerange.rawValue)
                 ,URLQueryItem(name: qilimit, value: String(limit))
+//                ,URLQueryItem(name: "q", value: "westworld2")
             ]
         
         AlamofireManager.sharedSession.request(urlComponents.url!)

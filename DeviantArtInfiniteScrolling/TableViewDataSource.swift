@@ -6,25 +6,18 @@
 //
 
 import UIKit
+import RxRelay
 
 class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourcePrefetching
 {
-    let fetchNextInProgressLock: NSObject = NSObject()
-    var fetchNextInProgress: Bool = false
-    
     let deviationsLock: NSObject = NSObject()
     var deviations: DeviatonsQueryResult = DeviatonsQueryResult(has_more: true, next_offset: 0, estimated_total: nil, results: [])
     
+    let fetchingInProgress = BehaviorRelay<Bool>(value: false)
+    let fetchNextInProgressLock: NSObject = NSObject() // despite BehaviorRelay having it's own lock, we stiil need this lock
+    
     func requestDeviations(into tableView: UITableView)
     {
-        let fetchNextInProgressScopedLock = UniqueLock(fetchNextInProgressLock)
-        if (fetchNextInProgress)
-        {
-            return
-        }
-        fetchNextInProgress = true
-        fetchNextInProgressScopedLock.unlock()
-        
         let deviationsScopedLock = UniqueLock(deviationsLock)
         guard deviations.has_more, let next_offset = deviations.next_offset else
         {
@@ -32,9 +25,24 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
         }
         deviationsScopedLock.unlock()
         
+        let fetchNextInProgressScopedLock = UniqueLock(fetchNextInProgressLock)
+        guard !fetchingInProgress.value else
+        {
+            return
+        }
+        fetchingInProgress.accept(true)
+        fetchNextInProgressScopedLock.unlock()
+        
+        
         print("request next: \(next_offset)")
         DAManager.shared.requestPopularDeviations(completion:
         { [self] (resp) in
+            
+            defer
+            {
+                let fetchNextInProgressScopedLock = UniqueLock(fetchNextInProgressLock)
+                fetchingInProgress.accept(false)
+            }
             
             if let newDeviations = resp.value
             {
@@ -46,7 +54,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
                     return
                 }
                 
-                let newDeviationsCount = newDeviations.results.count
+                let newDeviationsCount = newDeviations.results.count // at least 1 entity is guarantied
                 
                 // build indexPaths
                 var indexPaths: [IndexPath] = []
@@ -64,11 +72,6 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
                     deviations = tmpDeviations
                 }
                 
-                UniqueLock(fetchNextInProgressLock)
-                {
-                    fetchNextInProgress = false
-                }
-
                 DispatchQueue.main.async
                 {
                     tableView.performBatchUpdates
@@ -104,9 +107,18 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
             return UITableViewCell()
         }
         
+        var count: Int = 0
         UniqueLock(deviationsLock)
         {
+            count = deviations.results.count
             cell.data = deviations.results[indexPath.row]
+        }
+        if (count - 1 == indexPath.row)
+        {
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async
+            {
+                self.requestDeviations(into: tableView)
+            }
         }
         
         print("currently displaying: \(indexPath.row)")
@@ -119,7 +131,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
         if let last = indexPaths.last
         {
             let lock = UniqueLock(deviationsLock)
-            if (last.row + 9999 >= (deviations.results.count - 1)) // todo magic numbers
+            if (last.row + 100 >= (deviations.results.count - 1)) // todo magic numbers
             {
                 lock.unlock()
                 requestDeviations(into: tableView)
