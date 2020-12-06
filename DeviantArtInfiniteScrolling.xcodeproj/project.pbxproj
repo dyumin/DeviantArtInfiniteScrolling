@@ -12,6 +12,7 @@
 		7B077C8DA5F9B069CD12B5A1 /* Pods_DeviantArtInfiniteScrolling_DeviantArtInfiniteScrollingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C68C890E7650061838D1543 /* Pods_DeviantArtInfiniteScrolling_DeviantArtInfiniteScrollingUITests.framework */; };
 		CC5819DA257D1F2700BE1530 /* UniqueLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5819D9257D1F2600BE1530 /* UniqueLock.swift */; };
 		CC5819DF257D396300BE1530 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5819DE257D396300BE1530 /* TableViewDataSource.swift */; };
+		CC5819E4257D583100BE1530 /* CircularBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5819E3257D583000BE1530 /* CircularBuffer.swift */; };
 		CC636335257BE768001A2522 /* StatusMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC636334257BE768001A2522 /* StatusMessage.swift */; };
 		CCF46294257BB22600BEB655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46293257BB22600BEB655 /* AppDelegate.swift */; };
 		CCF46298257BB22600BEB655 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF46297257BB22600BEB655 /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		C4B829B6249564FFF4413D0F /* Pods-DeviantArtInfiniteScrolling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeviantArtInfiniteScrolling.release.xcconfig"; path = "Target Support Files/Pods-DeviantArtInfiniteScrolling/Pods-DeviantArtInfiniteScrolling.release.xcconfig"; sourceTree = "<group>"; };
 		CC5819D9257D1F2600BE1530 /* UniqueLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueLock.swift; sourceTree = "<group>"; };
 		CC5819DE257D396300BE1530 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		CC5819E3257D583000BE1530 /* CircularBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularBuffer.swift; sourceTree = "<group>"; };
 		CC636334257BE768001A2522 /* StatusMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessage.swift; sourceTree = "<group>"; };
 		CCF46290257BB22600BEB655 /* DeviantArtInfiniteScrolling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviantArtInfiniteScrolling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF46293257BB22600BEB655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		CCF46325257BD89000BEB655 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CC5819E3257D583000BE1530 /* CircularBuffer.swift */,
 				CCF46326257BD8B200BEB655 /* AlamofireManager.swift */,
 				CC636334257BE768001A2522 /* StatusMessage.swift */,
 				CC5819D9257D1F2600BE1530 /* UniqueLock.swift */,
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5819E4257D583100BE1530 /* CircularBuffer.swift in Sources */,
 				CCF46298257BB22600BEB655 /* ViewController.swift in Sources */,
 				CCF462D6257BC90E00BEB655 /* DeviationPreviewCell.swift in Sources */,
 				CC5819DF257D396300BE1530 /* TableViewDataSource.swift in Sources */,
