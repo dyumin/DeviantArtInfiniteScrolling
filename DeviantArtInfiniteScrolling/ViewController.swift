@@ -44,8 +44,6 @@ class ViewController: UIViewController, UITableViewDelegate
     
     private let datasource: TableViewDataSource = TableViewDataSource()
     
-    var kvoToken: NSKeyValueObservation?
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -87,7 +85,9 @@ class ViewController: UIViewController, UITableViewDelegate
             }
         }.disposed(by: disposeBag)
         
-        kvoToken = DAMediaManager.shared.mediaQueue.observe(\.operationCount, options: .new)
+        
+        var kvoToken: NSKeyValueObservation?
+        kvoToken = DAMediaManager.shared.mediaOperationQueue.observe(\.operationCount, options: .new)
         { [weak self] (OperationQueue, change) in
             if let new = change.newValue
             {

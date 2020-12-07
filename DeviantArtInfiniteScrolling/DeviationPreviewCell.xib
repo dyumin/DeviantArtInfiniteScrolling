@@ -10,32 +10,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviationPreviewCell" id="KGk-i7-Jjw" customClass="DeviationPreviewCell" customModule="DeviantArtInfiniteScrolling" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviationPreviewCell" rowHeight="202" id="KGk-i7-Jjw" customClass="DeviationPreviewCell" customModule="DeviantArtInfiniteScrolling" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="287" height="202"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="287" height="202"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieb-vy-tbF">
-                        <rect key="frame" x="43" y="7" width="46" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBl-2s-ESX">
-                        <rect key="frame" x="97" y="12" width="207" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBl-2s-ESX">
+                        <rect key="frame" x="20" y="20" width="247" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NXI-eo-mej">
+                        <rect key="frame" x="0.0" y="48.5" width="287" height="153.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="153.5" id="vbZ-pH-XRu"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="NXI-eo-mej" secondAttribute="bottom" id="5Qf-ev-DNH"/>
+                    <constraint firstAttribute="trailing" secondItem="NXI-eo-mej" secondAttribute="trailing" id="6Ew-fT-XZ7"/>
+                    <constraint firstItem="FBl-2s-ESX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="8Nn-Tb-6YY"/>
+                    <constraint firstItem="NXI-eo-mej" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Au1-Gg-TVk"/>
+                    <constraint firstAttribute="trailing" secondItem="FBl-2s-ESX" secondAttribute="trailing" constant="20" symbolic="YES" id="C8e-jS-1K2"/>
+                    <constraint firstItem="NXI-eo-mej" firstAttribute="top" secondItem="FBl-2s-ESX" secondAttribute="bottom" constant="8" symbolic="YES" id="E2N-3R-3F7"/>
+                    <constraint firstItem="FBl-2s-ESX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" symbolic="YES" id="iAU-NY-dCV"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="deviationImage" destination="NXI-eo-mej" id="MPS-gk-KU6"/>
                 <outlet property="label" destination="FBl-2s-ESX" id="vgc-lQ-V54"/>
             </connections>
-            <point key="canvasLocation" x="140.57971014492756" y="153.34821428571428"/>
+            <point key="canvasLocation" x="115.21739130434783" y="206.25"/>
         </tableViewCell>
     </objects>
 </document>
