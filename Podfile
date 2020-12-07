@@ -6,10 +6,10 @@ target 'DeviantArtInfiniteScrolling' do
   use_frameworks!
 
   pod 'Alamofire', '~> 5.2'
-  pod 'SwiftyJSON', '~> 4.0'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SwiftMessages'
+  pod 'PINCache'
 
   # Pods for DeviantArtInfiniteScrolling
 

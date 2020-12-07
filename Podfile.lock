@@ -1,5 +1,13 @@
 PODS:
   - Alamofire (5.4.0)
+  - PINCache (3.0.3):
+    - PINCache/Arc-exception-safe (= 3.0.3)
+    - PINCache/Core (= 3.0.3)
+  - PINCache/Arc-exception-safe (3.0.3):
+    - PINCache/Core
+  - PINCache/Core (3.0.3):
+    - PINOperation (~> 1.2.1)
+  - PINOperation (1.2.1)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -9,32 +17,33 @@ PODS:
   - SwiftMessages (8.0.3):
     - SwiftMessages/App (= 8.0.3)
   - SwiftMessages/App (8.0.3)
-  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - PINCache
   - RxCocoa
   - RxSwift
   - SwiftMessages
-  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - PINCache
+    - PINOperation
     - RxCocoa
     - RxRelay
     - RxSwift
     - SwiftMessages
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
+  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftMessages: 063ec9ffea3ffa7d17ba595157a9ec78e4fe045f
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 1cfdb9e4fa7edd93d9bf637cf5f6cd4823f4200f
+PODFILE CHECKSUM: 38fea646b840269147715d22ed242f68b06d6f57
 
 COCOAPODS: 1.8.4
