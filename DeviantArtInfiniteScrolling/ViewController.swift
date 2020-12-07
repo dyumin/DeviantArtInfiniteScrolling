@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate
         }
     }
     
+    @IBOutlet weak var mediaTasksLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     {
@@ -42,6 +43,8 @@ class ViewController: UIViewController, UITableViewDelegate
     }
     
     private let datasource: TableViewDataSource = TableViewDataSource()
+    
+    var kvoToken: NSKeyValueObservation?
     
     override func viewDidLoad()
     {
@@ -58,6 +61,10 @@ class ViewController: UIViewController, UITableViewDelegate
                 self.tableView.dataSource = self.datasource
                 self.tableView.prefetchDataSource = self.datasource
                 self.datasource.requestDeviations(into: self.tableView)
+            }
+            else
+            {
+                print("\(#file): \(#function) line \(#line): error: \(status)")
             }
         }.disposed(by: disposeBag)
         
@@ -79,6 +86,17 @@ class ViewController: UIViewController, UITableViewDelegate
                 }
             }
         }.disposed(by: disposeBag)
+        
+        kvoToken = DAMediaManager.shared.mediaQueue.observe(\.operationCount, options: .new)
+        { [weak self] (OperationQueue, change) in
+            if let new = change.newValue
+            {
+                DispatchQueue.main.async
+                {
+                    self?.mediaTasksLabel.text = String(new)
+                }
+            }
+        }
     }
 }
 

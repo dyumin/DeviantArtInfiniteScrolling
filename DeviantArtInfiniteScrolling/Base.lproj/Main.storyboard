@@ -29,16 +29,28 @@
                                 <rect key="frame" x="0.0" y="546" width="375" height="121"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagination status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuG-aB-Dua">
-                                        <rect key="frame" x="8" y="8" width="136" height="21"/>
+                                        <rect key="frame" x="51.5" y="8" width="135.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download queue size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdR-xp-fdr">
+                                        <rect key="frame" x="20" y="37" width="167" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-Hp-cuD">
-                                        <rect key="frame" x="152" y="8.5" width="20" height="20"/>
+                                        <rect key="frame" x="195" y="8.5" width="20" height="20"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odK-9r-Gob">
-                                        <rect key="frame" x="152" y="8" width="39" height="21"/>
+                                        <rect key="frame" x="195" y="8" width="39" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-oQ-tE6">
+                                        <rect key="frame" x="195" y="37" width="11" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,13 +59,19 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="TeG-Hp-cuD" firstAttribute="leading" secondItem="KuG-aB-Dua" secondAttribute="trailing" constant="8" symbolic="YES" id="0ex-c2-iJ9"/>
-                                    <constraint firstItem="KuG-aB-Dua" firstAttribute="leading" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="8" id="FIB-vn-Q3t"/>
+                                    <constraint firstItem="ZdR-xp-fdr" firstAttribute="top" secondItem="KuG-aB-Dua" secondAttribute="bottom" constant="8" symbolic="YES" id="4oU-aU-ASY"/>
+                                    <constraint firstItem="WCM-oQ-tE6" firstAttribute="leading" secondItem="ZdR-xp-fdr" secondAttribute="trailing" constant="8" symbolic="YES" id="AGv-xS-F5q"/>
+                                    <constraint firstItem="KuG-aB-Dua" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="20" symbolic="YES" id="FIB-vn-Q3t"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="WCM-oQ-tE6" secondAttribute="trailing" constant="212" id="FUB-a7-k9U"/>
+                                    <constraint firstItem="ZdR-xp-fdr" firstAttribute="leading" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="20" symbolic="YES" id="QgC-fP-DyO"/>
                                     <constraint firstAttribute="height" constant="121" id="TiT-kG-mFw"/>
                                     <constraint firstItem="KuG-aB-Dua" firstAttribute="top" secondItem="Fm9-KB-F9j" secondAttribute="top" constant="8" id="bQp-dm-t7w"/>
                                     <constraint firstItem="odK-9r-Gob" firstAttribute="centerY" secondItem="KuG-aB-Dua" secondAttribute="centerY" id="dPm-G6-QtL"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="odK-9r-Gob" secondAttribute="trailing" constant="20" symbolic="YES" id="jFQ-1F-hPa"/>
                                     <constraint firstItem="TeG-Hp-cuD" firstAttribute="centerY" secondItem="KuG-aB-Dua" secondAttribute="centerY" id="nEf-1L-XVC"/>
+                                    <constraint firstItem="WCM-oQ-tE6" firstAttribute="centerY" secondItem="ZdR-xp-fdr" secondAttribute="centerY" id="ppa-zk-425"/>
                                     <constraint firstItem="odK-9r-Gob" firstAttribute="leading" secondItem="KuG-aB-Dua" secondAttribute="trailing" constant="8" symbolic="YES" id="zMM-Nd-guy"/>
+                                    <constraint firstItem="ZdR-xp-fdr" firstAttribute="trailing" secondItem="KuG-aB-Dua" secondAttribute="trailing" id="zw0-CR-Biq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -70,6 +88,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mediaTasksLabel" destination="WCM-oQ-tE6" id="EsR-Uv-e2j"/>
                         <outlet property="pagingActivityIndicator" destination="TeG-Hp-cuD" id="rMb-2l-WzX"/>
                         <outlet property="pagingDoneLabel" destination="odK-9r-Gob" id="OcW-oG-Y81"/>
                         <outlet property="tableView" destination="D1c-ox-aIB" id="9kU-8y-AnT"/>

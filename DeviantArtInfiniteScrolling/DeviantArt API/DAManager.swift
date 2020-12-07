@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import RxRelay
+import RxSwift
 import Alamofire
 
 fileprivate class Endpoints
@@ -186,7 +186,7 @@ class DAManager
         session access token
      */
     private var access_token = ""
-    let sessionTokenStatus = BehaviorRelay<Status>(value: .Unknown)
+    let sessionTokenStatus = ReplaySubject<Status>.create(bufferSize: 1)
     
     func requestAccessToken()
     {
@@ -210,16 +210,16 @@ class DAManager
                 if let jsonResponse = jsonResponse as? NSDictionary, let access_token = jsonResponse["access_token"] as? String, response.response?.statusCode == 200
                 {
                     self.access_token = access_token
-                    self.sessionTokenStatus.accept(.Success)
+                    self.sessionTokenStatus.on(.next(.Success))
                 }
                 else
                 {
                     print("\(#file): \(#function) line \(#line): response: \(jsonResponse)")
-                    self.sessionTokenStatus.accept(.Error)
+                    self.sessionTokenStatus.on(.next(.Error))
                 }
             case .failure(let error):
                 print("\(#file): \(#function) line \(#line): error: \(error)")
-                self.sessionTokenStatus.accept(.Error)
+                self.sessionTokenStatus.on(.next(.Error))
             }
         })
     }
