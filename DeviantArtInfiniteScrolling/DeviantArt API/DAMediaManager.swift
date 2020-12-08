@@ -3,6 +3,7 @@
 //  DeviantArtInfiniteScrolling
 //
 //  Created by El D on 06.12.2020.
+//  Этот ужас надо переписать, но для примера сойдет
 //
 
 import Foundation
@@ -19,9 +20,6 @@ class DeviationMedia
     init(networkOperation: NetworkOperation)
     {
         self.networkOperation = networkOperation
-        
-        
-//        self.networkOperation.response.asObservable().bind(to: <#T##AFDataResponse<Data>?...##AFDataResponse<Data>?#>)
         
         self.networkOperation.response.asObservable().skip(1).map // todo: fix this skip(1) // todo: use bind
         { (response) -> UIImage? in
@@ -60,7 +58,7 @@ class DeviationMedia
         }
         get
         {
-            if (networkOperation.isFinished) // todo: ???
+            if (networkOperation.isFinished) // todo: track completion
             {
                 return false
             }
@@ -71,52 +69,27 @@ class DeviationMedia
         }
     }
     
-    deinit
-    {
-        
-    }
-    
+
     let image = ReplaySubject<UIImage?>.create(bufferSize: 1)
-    
-//    var image: UIImage?
-//    {
-//        get
-//        {
-//            if let data = networkOperation.response.value?.data
-//            {
-//                let image = UIImage(data: data)
-//                return image
-//            }
-//            return nil
-//        }
-//    }
 }
-
-//func ff(_ block:PINCacheObjectBlock)
-//{
-//    block.(<#T##PINCaching#>, <#T##String#>, <#T##Any?#>)
-//}
-
 
 class DAMediaManager
 {
     static let shared = DAMediaManager()
     private init() // please use shared
     {
-        mediaOperationQueue.maxConcurrentOperationCount = 1 // todo: there is some problems with 1
+        mediaOperationQueue.maxConcurrentOperationCount = 2 // AlamofireManager.sharedSession.sessionConfiguration.httpMaximumConnectionsPerHost
         cache = PINMemoryCache()
-        cache.costLimit = 50 // keep last 100 elements
+        cache.costLimit = 500 // keep last 500 elements
         cache.willRemoveObjectBlock =
         { (_, _, obj) in
             if let obj = obj as? DeviationMedia
             {
-                if (!obj.networkOperation.isExecuting)
-                {
-                    obj.networkOperation.cancel()
-                }
+                obj.networkOperation.cancel()
             }
         }
         
+        // I'm not so proud of this, but it will work for this example
         kvoToken = mediaOperationQueue.observe(\.operationCount, options: [.old, .new])
         { [weak self] (OperationQueue, change) in
             
@@ -158,6 +131,8 @@ class DAMediaManager
                                         diff -= 1
                                     }
                                 }
+                                
+                                self.queueSize.accept(self.mediaDownwloadQueue.count)
                             }
                         }
                     }
@@ -174,7 +149,6 @@ class DAMediaManager
         }
     }
     var kvoToken: NSKeyValueObservation?
-    
     
     let queueSize = BehaviorRelay<Int>(value: 0)
     
@@ -197,17 +171,16 @@ class DAMediaManager
     let cache: PINMemoryCache
     
     private let mediaDownwloadQueueLock = NSObject()
-    var mediaDownwloadQueue = CircularBuffer<DeviationMedia>(capacity: 50) // load last 50 images
+    var mediaDownwloadQueue = CircularBuffer<DeviationMedia>(capacity: 250) // load last 250 images
     
-//    private let responseQuenue = DispatchQueue.global(qos: .default)
-    
-//    private let mediaOperationQueueLock = NSObject()
     let mediaOperationQueue = OperationQueue()
     
-    
-    func getContent(for deviation: Deviaton) -> DeviationMedia? // todo: use global lock?
+    func getContent(for deviation: Deviaton) -> DeviationMedia? // todo: refactor using global lock (?)
     {
-        print("totalCost: ", cache.totalCost)
+        if (cache.totalCost < cache.costLimit)
+        {
+            print("totalCost: ", cache.totalCost)
+        }
         
         let uuidString = deviation.deviationid.uuidString
         if let deviationMedia = cache.object(forKey: uuidString) as? DeviationMedia
@@ -232,11 +205,10 @@ class DAMediaManager
             
             return deviationMedia
         }
-        else if let url = deviation.content?.src
+        else if let url = deviation.thumbs?.src ?? deviation.content?.src
         {
             let deviationMedia = DeviationMedia(networkOperation: NetworkOperation(with: url))
             cache.setObject(deviationMedia, forKey: uuidString, withCost: 1)
-            // setObject(deviationMedia, forKey: uuidString)
             print("requesting: \(deviation.title ?? "") by \(deviation.author_username ?? "") (2)")
             UniqueLock(mediaDownwloadQueueLock)
             {
@@ -254,8 +226,7 @@ class DAMediaManager
             return deviationMedia
         }
         
-        
-        
+        // todo: report error
         return nil
     }
 }
