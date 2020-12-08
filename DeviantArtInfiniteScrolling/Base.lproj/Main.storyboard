@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="D1c-ox-aIB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <sections/>
                                 <connections>
@@ -26,7 +26,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fm9-KB-F9j">
-                                <rect key="frame" x="0.0" y="546" width="375" height="121"/>
+                                <rect key="frame" x="0.0" y="580" width="375" height="87"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagination status:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuG-aB-Dua">
                                         <rect key="frame" x="20" y="8" width="174.5" height="21"/>
@@ -79,9 +79,9 @@
                                     <constraint firstItem="hVB-Jy-9iH" firstAttribute="leading" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="20" symbolic="YES" id="Fhv-Tm-NuU"/>
                                     <constraint firstItem="hVB-Jy-9iH" firstAttribute="trailing" secondItem="ZdR-xp-fdr" secondAttribute="trailing" id="Nba-IL-e31"/>
                                     <constraint firstItem="ZdR-xp-fdr" firstAttribute="leading" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="20" symbolic="YES" id="QgC-fP-DyO"/>
-                                    <constraint firstAttribute="height" constant="121" id="TiT-kG-mFw"/>
                                     <constraint firstItem="Tbi-xb-OJT" firstAttribute="leading" secondItem="hVB-Jy-9iH" secondAttribute="trailing" constant="8" symbolic="YES" id="ZBd-l6-JmK"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tbi-xb-OJT" secondAttribute="trailing" constant="20" symbolic="YES" id="Zz0-Zn-2ED"/>
+                                    <constraint firstAttribute="bottom" secondItem="hVB-Jy-9iH" secondAttribute="bottom" id="ahl-5E-rks"/>
                                     <constraint firstItem="KuG-aB-Dua" firstAttribute="top" secondItem="Fm9-KB-F9j" secondAttribute="top" constant="8" id="bQp-dm-t7w"/>
                                     <constraint firstItem="odK-9r-Gob" firstAttribute="centerY" secondItem="KuG-aB-Dua" secondAttribute="centerY" id="dPm-G6-QtL"/>
                                     <constraint firstItem="hVB-Jy-9iH" firstAttribute="top" secondItem="ZdR-xp-fdr" secondAttribute="bottom" constant="8" symbolic="YES" id="ewL-CP-nsy"/>
