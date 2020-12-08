@@ -28,41 +28,41 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fm9-KB-F9j">
                                 <rect key="frame" x="0.0" y="546" width="375" height="121"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagination status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuG-aB-Dua">
-                                        <rect key="frame" x="59.5" y="8" width="135.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagination status:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuG-aB-Dua">
+                                        <rect key="frame" x="20" y="8" width="174.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active download tasks:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdR-xp-fdr">
-                                        <rect key="frame" x="20" y="37" width="175" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active download tasks:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZdR-xp-fdr">
+                                        <rect key="frame" x="20" y="37" width="174.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download queue size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVB-Jy-9iH">
-                                        <rect key="frame" x="20" y="66" width="175" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download queue size:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hVB-Jy-9iH">
+                                        <rect key="frame" x="20" y="66" width="174.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="TeG-Hp-cuD">
-                                        <rect key="frame" x="203" y="8.5" width="20" height="20"/>
+                                        <rect key="frame" x="202.5" y="8.5" width="20" height="20"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odK-9r-Gob">
-                                        <rect key="frame" x="203" y="8" width="39" height="21"/>
+                                        <rect key="frame" x="202.5" y="8" width="39" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCM-oQ-tE6">
-                                        <rect key="frame" x="203" y="37" width="11" height="21"/>
+                                        <rect key="frame" x="202.5" y="37" width="10.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbi-xb-OJT">
-                                        <rect key="frame" x="203" y="66" width="11" height="21"/>
+                                        <rect key="frame" x="202.5" y="66" width="10.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -74,14 +74,14 @@
                                     <constraint firstItem="ZdR-xp-fdr" firstAttribute="top" secondItem="KuG-aB-Dua" secondAttribute="bottom" constant="8" symbolic="YES" id="4oU-aU-ASY"/>
                                     <constraint firstItem="Tbi-xb-OJT" firstAttribute="centerY" secondItem="hVB-Jy-9iH" secondAttribute="centerY" id="9qW-qL-Vyd"/>
                                     <constraint firstItem="WCM-oQ-tE6" firstAttribute="leading" secondItem="ZdR-xp-fdr" secondAttribute="trailing" constant="8" symbolic="YES" id="AGv-xS-F5q"/>
-                                    <constraint firstItem="KuG-aB-Dua" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="20" symbolic="YES" id="FIB-vn-Q3t"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="WCM-oQ-tE6" secondAttribute="trailing" constant="212" id="FUB-a7-k9U"/>
+                                    <constraint firstItem="KuG-aB-Dua" firstAttribute="leading" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="20" symbolic="YES" id="FIB-vn-Q3t"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WCM-oQ-tE6" secondAttribute="trailing" constant="20" symbolic="YES" id="FUB-a7-k9U"/>
                                     <constraint firstItem="hVB-Jy-9iH" firstAttribute="leading" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="20" symbolic="YES" id="Fhv-Tm-NuU"/>
                                     <constraint firstItem="hVB-Jy-9iH" firstAttribute="trailing" secondItem="ZdR-xp-fdr" secondAttribute="trailing" id="Nba-IL-e31"/>
-                                    <constraint firstItem="ZdR-xp-fdr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="20" symbolic="YES" id="QgC-fP-DyO"/>
+                                    <constraint firstItem="ZdR-xp-fdr" firstAttribute="leading" secondItem="Fm9-KB-F9j" secondAttribute="leading" constant="20" symbolic="YES" id="QgC-fP-DyO"/>
                                     <constraint firstAttribute="height" constant="121" id="TiT-kG-mFw"/>
                                     <constraint firstItem="Tbi-xb-OJT" firstAttribute="leading" secondItem="hVB-Jy-9iH" secondAttribute="trailing" constant="8" symbolic="YES" id="ZBd-l6-JmK"/>
-                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Tbi-xb-OJT" secondAttribute="trailing" constant="161" id="Zz0-Zn-2ED"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tbi-xb-OJT" secondAttribute="trailing" constant="20" symbolic="YES" id="Zz0-Zn-2ED"/>
                                     <constraint firstItem="KuG-aB-Dua" firstAttribute="top" secondItem="Fm9-KB-F9j" secondAttribute="top" constant="8" id="bQp-dm-t7w"/>
                                     <constraint firstItem="odK-9r-Gob" firstAttribute="centerY" secondItem="KuG-aB-Dua" secondAttribute="centerY" id="dPm-G6-QtL"/>
                                     <constraint firstItem="hVB-Jy-9iH" firstAttribute="top" secondItem="ZdR-xp-fdr" secondAttribute="bottom" constant="8" symbolic="YES" id="ewL-CP-nsy"/>
