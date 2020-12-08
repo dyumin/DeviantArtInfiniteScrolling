@@ -62,8 +62,6 @@
 		CC5819E9257D595400BE1530 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
 		CC5819F1257D5F0A00BE1530 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		CC5819FB257D6AAA00BE1530 /* DAMediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAMediaManager.swift; sourceTree = "<group>"; };
-		CC581A51257EEA0F00BE1530 /* ExceptionCatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionCatcher.h; sourceTree = "<group>"; };
-		CC581A55257EEA4C00BE1530 /* DeviantArtInfiniteScrolling-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeviantArtInfiniteScrolling-Bridging-Header.h"; sourceTree = "<group>"; };
 		CC636334257BE768001A2522 /* StatusMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessage.swift; sourceTree = "<group>"; };
 		CCF46290257BB22600BEB655 /* DeviantArtInfiniteScrolling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeviantArtInfiniteScrolling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF46293257BB22600BEB655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 			children = (
 				CCF4630D257BCD2900BEB655 /* DAManager.swift */,
 				CC5819FB257D6AAA00BE1530 /* DAMediaManager.swift */,
-				CC581A55257EEA4C00BE1530 /* DeviantArtInfiniteScrolling-Bridging-Header.h */,
 			);
 			path = "DeviantArt API";
 			sourceTree = "<group>";
@@ -221,7 +218,6 @@
 				CC636334257BE768001A2522 /* StatusMessage.swift */,
 				CC5819D9257D1F2600BE1530 /* UniqueLock.swift */,
 				CC5819F1257D5F0A00BE1530 /* AsynchronousOperation.swift */,
-				CC581A51257EEA0F00BE1530 /* ExceptionCatcher.h */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -664,7 +660,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.dyumin.DeviantArtInfiniteScrolling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DeviantArtInfiniteScrolling/DeviantArt API/DeviantArtInfiniteScrolling-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -687,7 +682,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.dyumin.DeviantArtInfiniteScrolling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DeviantArtInfiniteScrolling/DeviantArt API/DeviantArtInfiniteScrolling-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

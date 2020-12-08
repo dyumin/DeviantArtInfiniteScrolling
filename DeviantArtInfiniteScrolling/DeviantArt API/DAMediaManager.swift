@@ -151,18 +151,11 @@ class DAMediaManager
                                 while diff > 0 && self.mediaDownwloadQueue.count != 0
                                 {
                                     let task = self.mediaDownwloadQueue.popBack()
-                                    let ex = tryBlock
+                                    if (!task.ready && !task.isInOperationQueue)
                                     {
-                                        if (!task.ready && !task.isInOperationQueue)
-                                        {
-                                            self.mediaOperationQueue.addOperation(task.networkOperation)
-                                            task.isInOperationQueue = true
-                                            diff -= 1
-                                        }
-                                    }
-                                    if (ex != nil)
-                                    {
-                                        print(ex)
+                                        self.mediaOperationQueue.addOperation(task.networkOperation)
+                                        task.isInOperationQueue = true
+                                        diff -= 1
                                     }
                                 }
                             }

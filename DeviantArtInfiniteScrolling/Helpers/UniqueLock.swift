@@ -7,20 +7,7 @@
 
 import Foundation
 
-//@available(iOS 2.0, *)
-//public func objc_sync_enter(_ obj: Any) -> Int32
-//
-///**
-// * End synchronizing on 'obj'.
-// *
-// * @param obj The object to end synchronizing on.
-// *
-// * @return OBJC_SYNC_SUCCESS or OBJC_SYNC_NOT_OWNING_THREAD_ERROR
-// */
-//@available(iOS 2.0, *)
-//public func objc_sync_exit(_ obj: Any) -> Int32
-
-// reqursive lock
+// reqursive unique lock
 class UniqueLock
 {
     private var isOwningLock = true
