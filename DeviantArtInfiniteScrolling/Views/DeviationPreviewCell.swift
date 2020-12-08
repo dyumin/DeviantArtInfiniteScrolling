@@ -49,7 +49,7 @@ class DeviationPreviewCell: UITableViewCell
                         let newHeight = image.size.height / aspectX
 
                         self.imageHeight.constant = newHeight
-                        self.deviationImage.setNeedsLayout()
+//                        self.deviationImage.setNeedsLayout() // todo
                         
                         var contentFrameSize = self.deviationImage.frame.size
                         contentFrameSize.height = newHeight

@@ -142,6 +142,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		CC581AAC25801A5900BE1530 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCF462D4257BC90E00BEB655 /* DeviationPreviewCell.swift */,
+				CCF462D5257BC90E00BEB655 /* DeviationPreviewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CCF46287257BB22600BEB655 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +176,7 @@
 		CCF46292257BB22600BEB655 /* DeviantArtInfiniteScrolling */ = {
 			isa = PBXGroup;
 			children = (
+				CC581AAC25801A5900BE1530 /* Views */,
 				CC5819E8257D593300BE1530 /* Network */,
 				CCF46325257BD89000BEB655 /* Helpers */,
 				CCF462CF257BBAF100BEB655 /* DeviantArt API */,
@@ -176,8 +186,6 @@
 				CCF4629C257BB22800BEB655 /* Assets.xcassets */,
 				CCF4629E257BB22800BEB655 /* LaunchScreen.storyboard */,
 				CCF462A1257BB22800BEB655 /* Info.plist */,
-				CCF462D4257BC90E00BEB655 /* DeviationPreviewCell.swift */,
-				CCF462D5257BC90E00BEB655 /* DeviationPreviewCell.xib */,
 				CC5819DE257D396300BE1530 /* TableViewDataSource.swift */,
 			);
 			path = DeviantArtInfiniteScrolling;
