@@ -15,7 +15,18 @@ class DeviationPreviewCell: UITableViewCell
     var disposeBag = DisposeBag()
     
     @IBOutlet weak var deviationImage: UIImageView!
+    {
+        didSet
+        {
+            deviationImage.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
+
     @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+
     
     var data : Deviaton!
     {
@@ -30,6 +41,51 @@ class DeviationPreviewCell: UITableViewCell
                 if let image = event
                 {
                     self.deviationImage.image = image
+                    
+                    if (image.size.height > image.size.width)
+                    {
+                        print(self.label.text)
+                        let aspectX = image.size.width / self.scrollView.frame.size.width
+                        let newHeight = image.size.height / aspectX
+
+                        self.imageHeight.constant = newHeight
+                        self.deviationImage.setNeedsLayout()
+                        
+                        var contentFrameSize = self.deviationImage.frame.size
+                        contentFrameSize.height = newHeight
+                        self.scrollView.contentSize = contentFrameSize
+                    }
+                    else
+                    {
+                        self.imageHeight.constant = self.scrollView.frame.size.height
+                        self.deviationImage.setNeedsLayout()
+                        
+                        var contentFrameSize = self.deviationImage.frame.size
+                        contentFrameSize.height = self.scrollView.frame.size.height
+                        self.scrollView.contentSize = contentFrameSize
+                    }
+                    
+//                    if (image.size.height > image.size.width)
+//                    {
+//                        let aspectX = image.size.width / self.scrollView.frame.size.width
+//                        let newHeight = image.size.height / aspectX
+//
+//                        var newFrame = self.scrollView.frame
+//                        newFrame.size.height = newHeight
+//
+//                        self.deviationImage.frame = newFrame
+//                    }
+//                    else
+//                    {
+//                        self.deviationImage.frame = self.scrollView.frame
+//                    }
+//
+//                    self.deviationImage.setNeedsLayout()
+
+//                    NSLayoutConstraint.init(item: <#T##Any#>, attribute: <#T##NSLayoutConstraint.Attribute#>, relatedBy: <#T##NSLayoutConstraint.Relation#>, toItem: <#T##Any?#>, attribute: <#T##NSLayoutConstraint.Attribute#>, multiplier: <#T##CGFloat#>, constant: <#T##CGFloat#>)
+                    
+//                    let constraint = self.deviationImage.heightAnchor.constraint(lessThanOrEqualToConstant: newHeight)
+//                    self.deviationImage.addConstraint(constraint)
                 }
                 
             }).disposed(by: disposeBag)
