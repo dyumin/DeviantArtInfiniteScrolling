@@ -226,7 +226,7 @@ class DAMediaManager
                 {
                     if (!operationQueueIsIdle)
                     {
-                        mediaDownwloadQueue.pushBack(deviationMedia)
+                        mediaDownwloadQueue.pushBack(deviationMedia) // todo: check if it is already there
                     }
                     else
                     {
