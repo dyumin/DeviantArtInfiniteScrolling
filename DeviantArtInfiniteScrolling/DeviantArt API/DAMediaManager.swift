@@ -103,7 +103,7 @@ class DAMediaManager
     static let shared = DAMediaManager()
     private init() // please use shared
     {
-        mediaOperationQueue.maxConcurrentOperationCount = 2
+        mediaOperationQueue.maxConcurrentOperationCount = 1 // todo: there is some problems with 1
         cache = PINMemoryCache()
         cache.costLimit = 50 // keep last 100 elements
         cache.willRemoveObjectBlock =
