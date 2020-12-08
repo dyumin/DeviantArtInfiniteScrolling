@@ -76,7 +76,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
                 {
                     tableView.performBatchUpdates
                     {
-                        tableView.insertRows(at: indexPaths, with: UITableView.RowAnimation.fade)
+                        tableView.insertRows(at: indexPaths, with: UITableView.RowAnimation.none)
                     } completion:
                     { (animationsFinished) in
 

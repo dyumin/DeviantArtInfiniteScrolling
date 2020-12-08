@@ -8,6 +8,7 @@
 import Foundation
 import PINCache
 import RxSwift
+import RxRelay
 
 class DeviationMedia
 {
@@ -75,8 +76,6 @@ class DeviationMedia
         
     }
     
-    
-    
     let image = ReplaySubject<UIImage?>.create(bufferSize: 1)
     
 //    var image: UIImage?
@@ -104,9 +103,9 @@ class DAMediaManager
     static let shared = DAMediaManager()
     private init() // please use shared
     {
-        mediaOperationQueue.maxConcurrentOperationCount = 1
+        mediaOperationQueue.maxConcurrentOperationCount = 2
         cache = PINMemoryCache()
-        cache.costLimit = 100 // keep last 100 elements
+        cache.costLimit = 50 // keep last 100 elements
         cache.willRemoveObjectBlock =
         { (_, _, obj) in
             if let obj = obj as? DeviationMedia
@@ -116,6 +115,89 @@ class DAMediaManager
                     obj.networkOperation.cancel()
                 }
             }
+        }
+        
+        kvoToken = mediaOperationQueue.observe(\.operationCount, options: [.old, .new])
+        { [weak self] (OperationQueue, change) in
+            
+            if let oldValue = change.oldValue, let newValue = change.newValue
+            {
+                if (newValue > oldValue) // task was added
+                {
+                    if let self = self
+                    {
+                        self.operationQueueIsIdle = false
+                    }
+
+                    return
+                }
+                if (newValue == 0)
+                {
+                    self?.operationQueueIsIdle = true
+                }
+                
+                DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async // todo: optimise
+                {
+                    if let self = self
+                    {
+                        let maxConcurrentOperationCount = self.mediaOperationQueue.maxConcurrentOperationCount
+                        
+                        if (newValue < maxConcurrentOperationCount)
+                        {
+                            var diff = maxConcurrentOperationCount - newValue // how many tasks to add
+                            
+                            UniqueLock(self.mediaDownwloadQueueLock)
+                            {
+                                while diff > 0 && self.mediaDownwloadQueue.count != 0
+                                {
+                                    let task = self.mediaDownwloadQueue.popBack()
+                                    let ex = tryBlock
+                                    {
+                                        if (!task.ready && !task.isInOperationQueue)
+                                        {
+                                            self.mediaOperationQueue.addOperation(task.networkOperation)
+                                            task.isInOperationQueue = true
+                                            diff -= 1
+                                        }
+                                    }
+                                    if (ex != nil)
+                                    {
+                                        print(ex)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            if let self = self
+            {
+                UniqueLock(self.mediaDownwloadQueueLock)
+                {
+                    self.queueSize.accept(self.mediaDownwloadQueue.count)
+                }
+            }
+        }
+    }
+    var kvoToken: NSKeyValueObservation?
+    
+    
+    let queueSize = BehaviorRelay<Int>(value: 0)
+    
+    private let operationQueueIsIdleLock = NSObject()
+    private var _operationQueueIsIdle: Bool = true
+    var operationQueueIsIdle: Bool
+    {
+        set
+        {
+            UniqueLock(operationQueueIsIdleLock) { _operationQueueIsIdle = newValue }
+        }
+        get
+        {
+            var operationQueueIsIdleTmp = false
+            UniqueLock(operationQueueIsIdleLock) { operationQueueIsIdleTmp = _operationQueueIsIdle }
+            return operationQueueIsIdleTmp
         }
     }
     
@@ -134,29 +216,27 @@ class DAMediaManager
     {
         print("totalCost: ", cache.totalCost)
         
-        defer
-        {
-            UniqueLock(mediaDownwloadQueueLock)
-            {
-                for task in mediaDownwloadQueue
-                {
-                    mediaOperationQueue.addOperation(task.networkOperation)
-                    task.isInOperationQueue = true
-                }
-                mediaDownwloadQueue.removeAll()
-            }
-        }
-        
         let uuidString = deviation.deviationid.uuidString
         if let deviationMedia = cache.object(forKey: uuidString) as? DeviationMedia
         {
-            if (!deviationMedia.ready && !deviationMedia.isInOperationQueue)
+            print("requesting: \(deviation.title ?? "") by \(deviation.author_username ?? "") (1)")
+            UniqueLock(mediaDownwloadQueueLock)
             {
-                UniqueLock(mediaDownwloadQueueLock)
+                if (!deviationMedia.ready && !deviationMedia.isInOperationQueue)
                 {
-                    mediaDownwloadQueue.append(deviationMedia)
+                    if (!operationQueueIsIdle)
+                    {
+                        mediaDownwloadQueue.pushBack(deviationMedia)
+                    }
+                    else
+                    {
+                        self.mediaOperationQueue.addOperation(deviationMedia.networkOperation)
+                        deviationMedia.isInOperationQueue = true
+                    }
                 }
             }
+
+            
             return deviationMedia
         }
         else if let url = deviation.content?.src
@@ -164,11 +244,20 @@ class DAMediaManager
             let deviationMedia = DeviationMedia(networkOperation: NetworkOperation(with: url))
             cache.setObject(deviationMedia, forKey: uuidString, withCost: 1)
             // setObject(deviationMedia, forKey: uuidString)
-            
+            print("requesting: \(deviation.title ?? "") by \(deviation.author_username ?? "") (2)")
             UniqueLock(mediaDownwloadQueueLock)
             {
-                mediaDownwloadQueue.append(deviationMedia)
+                if (!operationQueueIsIdle)
+                {
+                    mediaDownwloadQueue.pushBack(deviationMedia)
+                }
+                else
+                {
+                    self.mediaOperationQueue.addOperation(deviationMedia.networkOperation)
+                    deviationMedia.isInOperationQueue = true
+                }
             }
+            
             return deviationMedia
         }
         
