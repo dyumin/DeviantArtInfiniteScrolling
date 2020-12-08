@@ -5,39 +5,56 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviationPreviewCell" rowHeight="316" id="KGk-i7-Jjw" customClass="DeviationPreviewCell" customModule="DeviantArtInfiniteScrolling" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="329" height="316"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviationPreviewCell" rowHeight="193" id="KGk-i7-Jjw" customClass="DeviationPreviewCell" customModule="DeviantArtInfiniteScrolling" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="242" height="193"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="329" height="316"/>
+                <rect key="frame" x="0.0" y="0.0" width="242" height="193"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBl-2s-ESX">
-                        <rect key="frame" x="20" y="20" width="289" height="135"/>
+                        <rect key="frame" x="20" y="20" width="202" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddW-H4-g6f">
-                        <rect key="frame" x="0.0" y="163" width="329" height="153"/>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddW-H4-g6f">
+                        <rect key="frame" x="0.0" y="57" width="242" height="136"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NXI-eo-mej">
-                                <rect key="frame" x="0.0" y="0.0" width="329" height="95"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDm-Li-q7U">
+                                <rect key="frame" x="0.0" y="0.0" width="242" height="128"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NXI-eo-mej">
+                                        <rect key="frame" x="0.0" y="0.0" width="242" height="95"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="95" id="UEM-Cp-7so"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="95" id="3a9-jn-8WF"/>
+                                    <constraint firstItem="NXI-eo-mej" firstAttribute="leading" secondItem="fDm-Li-q7U" secondAttribute="leading" id="B1h-aJ-tlb"/>
+                                    <constraint firstItem="NXI-eo-mej" firstAttribute="top" secondItem="fDm-Li-q7U" secondAttribute="top" id="FXu-3H-Dul"/>
+                                    <constraint firstAttribute="trailing" secondItem="NXI-eo-mej" secondAttribute="trailing" id="tRf-Wo-PSt"/>
+                                    <constraint firstAttribute="height" priority="750" constant="128" id="ypi-9b-h6c"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="NXI-eo-mej" firstAttribute="width" secondItem="ddW-H4-g6f" secondAttribute="width" id="0R3-WE-Lch"/>
-                            <constraint firstAttribute="height" constant="153" id="bYv-M2-2Je"/>
-                            <constraint firstItem="NXI-eo-mej" firstAttribute="centerX" secondItem="ddW-H4-g6f" secondAttribute="centerX" id="uEO-aV-bwd"/>
+                            <constraint firstAttribute="width" secondItem="ddW-H4-g6f" secondAttribute="height" multiplier="16:9" id="6uq-cA-CKd"/>
+                            <constraint firstAttribute="trailing" secondItem="fDm-Li-q7U" secondAttribute="trailing" id="9QA-oJ-rS9"/>
+                            <constraint firstItem="fDm-Li-q7U" firstAttribute="centerX" secondItem="ddW-H4-g6f" secondAttribute="centerX" id="H0J-fS-cgA"/>
+                            <constraint firstItem="fDm-Li-q7U" firstAttribute="leading" secondItem="ddW-H4-g6f" secondAttribute="leading" id="XNC-yG-H0Y"/>
+                            <constraint firstAttribute="width" priority="750" constant="329" id="ZwR-PV-E8E"/>
+                            <constraint firstItem="fDm-Li-q7U" firstAttribute="top" secondItem="ddW-H4-g6f" secondAttribute="top" id="hvd-4L-MqP"/>
+                            <constraint firstAttribute="bottom" secondItem="fDm-Li-q7U" secondAttribute="bottom" id="kxO-gO-1zD"/>
                         </constraints>
                         <viewLayoutGuide key="contentLayoutGuide" id="0CQ-sF-hlr"/>
                         <viewLayoutGuide key="frameLayoutGuide" id="uVU-xE-5yw"/>
@@ -56,11 +73,16 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="deviationImage" destination="NXI-eo-mej" id="MPS-gk-KU6"/>
-                <outlet property="imageHeight" destination="3a9-jn-8WF" id="Fd3-NC-Psv"/>
+                <outlet property="imageHeight" destination="UEM-Cp-7so" id="rwo-cP-TRN"/>
                 <outlet property="label" destination="FBl-2s-ESX" id="vgc-lQ-V54"/>
                 <outlet property="scrollView" destination="ddW-H4-g6f" id="JmV-J3-jQg"/>
             </connections>
-            <point key="canvasLocation" x="-212.31884057971016" y="244.41964285714283"/>
+            <point key="canvasLocation" x="-275.36231884057975" y="203.23660714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
