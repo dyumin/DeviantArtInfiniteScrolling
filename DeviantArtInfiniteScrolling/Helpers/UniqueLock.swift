@@ -24,8 +24,10 @@ class UniqueLock
     {
         self.obj = obj
         objc_sync_enter(obj)
+        defer {
+            unlockImpl()
+        }
         trailingClosure()
-        unlockImpl()
     }
     
     deinit
