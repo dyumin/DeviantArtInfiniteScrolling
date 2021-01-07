@@ -13,8 +13,6 @@ import RxRelay
 
 class DeviationMedia
 {
-    private let stateLock = NSObject()
-    
     private let disposeBag = DisposeBag()
     
     init(networkOperation: NetworkOperation)
@@ -49,12 +47,13 @@ class DeviationMedia
         }
     }
     
-    private var _isInOperationQueue: Bool = false
+    @Atomic private var _isInOperationQueue: Bool = false
+    
     var isInOperationQueue: Bool
     {
         set
         {
-            UniqueLock(stateLock) { _isInOperationQueue = newValue }
+            _isInOperationQueue = newValue
         }
         get
         {
@@ -63,9 +62,7 @@ class DeviationMedia
                 return false
             }
             
-            var isInOperationQueueTmp = false
-            UniqueLock(stateLock) { isInOperationQueueTmp = _isInOperationQueue }
-            return isInOperationQueueTmp
+            return _isInOperationQueue
         }
     }
     
@@ -152,21 +149,7 @@ class DAMediaManager
     
     let queueSize = BehaviorRelay<Int>(value: 0)
     
-    private let operationQueueIsIdleLock = NSObject()
-    private var _operationQueueIsIdle: Bool = true
-    var operationQueueIsIdle: Bool
-    {
-        set
-        {
-            UniqueLock(operationQueueIsIdleLock) { _operationQueueIsIdle = newValue }
-        }
-        get
-        {
-            var operationQueueIsIdleTmp = false
-            UniqueLock(operationQueueIsIdleLock) { operationQueueIsIdleTmp = _operationQueueIsIdle }
-            return operationQueueIsIdleTmp
-        }
-    }
+    @Atomic var operationQueueIsIdle: Bool = true
     
     let cache: PINMemoryCache
     
