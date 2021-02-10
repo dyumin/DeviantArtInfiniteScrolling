@@ -10,3 +10,5 @@ https://stackoverflow.com/questions/6077885/insertrowsatindexpaths-calling-cellf
 Можно словить [LayoutConstraints] Unable to simultaneously satisfy constraints. при быстром скролле.
 
 file:///Users/dyumin/Code/DeviantArtInfiniteScrolling/DeviantArtInfiniteScrolling/Base.lproj/Main.storyboard: warning: Unsupported Configuration: Medium Style before iOS 13.0
+
+Лента не горизонтальная, а вертикальная.
