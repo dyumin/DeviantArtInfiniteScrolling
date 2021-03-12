@@ -1,4 +1,4 @@
-# DeviantArtInfiniteScrolling
+# DeviantArtInfiniteScrolling (IOS interview take home code test)
 
 Тк эндпоинты с картинками доступны из РФ нестабильно, лучше запускать с VPN
 
