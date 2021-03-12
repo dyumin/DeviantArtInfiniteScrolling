@@ -35,11 +35,20 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
                     let currentDeviations = deviations.results.count // safe to read from background thread since fetchingInProgress is still true at this point
 
                     guard !newDeviations.results.isEmpty else {
+                        DispatchQueue.main.async
+                        {
+                            fetchingInProgress.accept(false)
+                            
+                            if (loadNextOnComplete) {
+                                loadNextOnComplete = false
+                                requestDeviations(into: tableView)
+                            }
+                        }
                         // todo: report error
                         return
                     }
 
-                    let newDeviationsCount = newDeviations.results.count // at least 1 entity is guarantied
+                    let newDeviationsCount = newDeviations.results.count // at least 1 entity is guaranteed
 
                     // build indexPaths
                     var indexPaths: [IndexPath] = []
@@ -68,6 +77,15 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
                     }
                 }
                 else {
+                    DispatchQueue.main.async
+                    {
+                        fetchingInProgress.accept(false)
+                        
+                        if (loadNextOnComplete) {
+                            loadNextOnComplete = false
+                            requestDeviations(into: tableView)
+                        }
+                    }
                     // todo: report error
                     return
                 }
