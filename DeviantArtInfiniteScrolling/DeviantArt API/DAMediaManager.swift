@@ -75,7 +75,7 @@ class DAMediaManager
     static let shared = DAMediaManager()
     private init() // please use shared
     {
-        mediaOperationQueue.maxConcurrentOperationCount = 2 // AlamofireManager.sharedSession.sessionConfiguration.httpMaximumConnectionsPerHost
+        mediaOperationQueue.maxConcurrentOperationCount = 10 // AlamofireManager.sharedSession.sessionConfiguration.httpMaximumConnectionsPerHost
         cache = PINMemoryCache()
         cache.costLimit = 500 // keep last 500 elements
         cache.willRemoveObjectBlock =

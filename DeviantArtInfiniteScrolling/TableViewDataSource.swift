@@ -10,81 +10,74 @@ import RxRelay
 
 class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourcePrefetching
 {
-    let deviationsLock: NSObject = NSObject()
     var deviations: DeviatonsQueryResult = DeviatonsQueryResult(has_more: true, next_offset: 0, estimated_total: nil, results: [])
-
     let fetchingInProgress = BehaviorRelay<Bool>(value: false)
-    let fetchNextInProgressLock: NSObject = NSObject() // despite BehaviorRelay having it's own lock, we still need this lock
+    var loadNextOnComplete = false
 
+    // requires main thread
     func requestDeviations(into tableView: UITableView)
     {
-        let deviationsScopedLock = UniqueLock(deviationsLock)
         guard deviations.has_more, let next_offset = deviations.next_offset else {
             return
         }
-        deviationsScopedLock.unlock()
 
-        let fetchNextInProgressScopedLock = UniqueLock(fetchNextInProgressLock)
         guard !fetchingInProgress.value else {
+            loadNextOnComplete = true
             return
         }
         fetchingInProgress.accept(true)
-        fetchNextInProgressScopedLock.unlock()
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            print("request next_offset: \(next_offset)")
+            DAManager.shared.requestPopularDeviations(completion:
+            { [self] (resp) in
+                if let newDeviations = resp.value {
+                    let currentDeviations = deviations.results.count // safe to read from background thread since fetchingInProgress is still true at this point
 
-        print("request next_offset: \(next_offset)")
-        DAManager.shared.requestPopularDeviations(completion:
-        { [self] (resp) in
+                    guard !newDeviations.results.isEmpty else {
+                        // todo: report error
+                        return
+                    }
 
-            defer
-            {
-                let fetchNextInProgressScopedLock = UniqueLock(fetchNextInProgressLock)
-                fetchingInProgress.accept(false)
-            }
+                    let newDeviationsCount = newDeviations.results.count // at least 1 entity is guarantied
 
-            if let newDeviations = resp.value {
-                let currentDeviations = deviations.results.count
+                    // build indexPaths
+                    var indexPaths: [IndexPath] = []
+                    indexPaths.reserveCapacity(newDeviationsCount)
 
-                guard !newDeviations.results.isEmpty else {
+                    for index in 0...newDeviationsCount - 1 {
+                        indexPaths.append(IndexPath(row: currentDeviations + index, section: 0))
+                    }
+
+                    let tmpDeviations = deviations.withLatest(newDeviations) // safe to read from background thread since fetchingInProgress is still true at this point
+
+                    DispatchQueue.main.async
+                    {
+                        fetchingInProgress.accept(false)
+                        deviations = tmpDeviations
+                        
+                        if (loadNextOnComplete) {
+                            loadNextOnComplete = false
+                            requestDeviations(into: tableView)
+                        }
+                        
+                        tableView.performBatchUpdates
+                        {
+                            tableView.insertRows(at: indexPaths, with: UITableView.RowAnimation.none)
+                        }
+                    }
+                }
+                else {
                     // todo: report error
                     return
                 }
-
-                let newDeviationsCount = newDeviations.results.count // at least 1 entity is guarantied
-
-                // build indexPaths
-                var indexPaths: [IndexPath] = []
-                indexPaths.reserveCapacity(newDeviationsCount)
-
-                for index in 0...newDeviationsCount - 1 {
-                    indexPaths.append(IndexPath(row: currentDeviations + index, section: 0))
-                }
-
-                let tmpDeviations = deviations.withLatest(newDeviations)
-
-                UniqueLock(deviationsLock)
-                {
-                    deviations = tmpDeviations
-                }
-
-                DispatchQueue.main.async
-                {
-                    tableView.performBatchUpdates
-                    {
-                        tableView.insertRows(at: indexPaths, with: UITableView.RowAnimation.none)
-                    }
-                }
-            }
-            else {
-                // todo: report error
-                return
-            }
-        }, next_offset)
+            }, next_offset)
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        let lock = UniqueLock(deviationsLock)
-        return deviations.results.count
+        deviations.results.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -94,17 +87,10 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
             return UITableViewCell()
         }
 
-        var count: Int = 0
-        UniqueLock(deviationsLock)
-        {
-            count = deviations.results.count
-            cell.data = deviations.results[indexPath.row]
-        }
-        if (count - 1 == indexPath.row) {
-            DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated).async
-            {
-                self.requestDeviations(into: tableView)
-            }
+        cell.data = deviations.results[indexPath.row]
+        
+        if (deviations.results.count - 1 == indexPath.row) {
+            self.requestDeviations(into: tableView)
         }
 
         print("currently displaying: \(indexPath.row)")
@@ -115,9 +101,7 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDataSourc
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath])
     {
         if let last = indexPaths.last {
-            let lock = UniqueLock(deviationsLock)
             if (last.row + 100 >= (deviations.results.count - 1)) { // todo: magic numbers
-                lock.unlock()
                 requestDeviations(into: tableView)
             }
         }

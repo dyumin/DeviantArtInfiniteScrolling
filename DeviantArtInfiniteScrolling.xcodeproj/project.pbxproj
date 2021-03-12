@@ -687,6 +687,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UCTQDPM624;
+				GCC_OPTIMIZATION_LEVEL = 3;
 				INFOPLIST_FILE = DeviantArtInfiniteScrolling/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
