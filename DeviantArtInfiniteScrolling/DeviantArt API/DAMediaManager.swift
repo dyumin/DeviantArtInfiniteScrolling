@@ -4,6 +4,7 @@
 //
 //  Created by El D on 06.12.2020.
 //  Этот ужас надо переписать, но для примера сойдет
+//  Currently slow download tasks may starve the queue, allowing scheduled tasks to start only after any of aforementioned slow tasks will complete
 //
 
 import Foundation
